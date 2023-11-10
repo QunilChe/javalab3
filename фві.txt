@@ -1,4 +1,0 @@
-Order Receipt
-Date: 2023-11-09
-Items:
-- Apple | Price: 15.0

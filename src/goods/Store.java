@@ -32,6 +32,7 @@ public class Store {
             throw new StoreException.ProductNotFoundException("Product not found in the store");
         }
     }
+
     public List<Product> orderProduct(String category, double maxPrice) {
         List<Product> orderedProducts = products.stream()
                 .filter(product -> product.getCategory().equalsIgnoreCase(category) && product.getPrice() <= maxPrice)
@@ -59,8 +60,6 @@ public class Store {
     }
 
 
-
-
     public void editProductPrice(String productName, double newPrice) {
         products.stream()
                 .filter(product -> product.getName().equals(productName))
@@ -81,6 +80,4 @@ public class Store {
     public void editReceipt(Receipt receipt, List<Product> newProducts) {
         receipt.updatePurchasedProducts(newProducts);
     }
-
-
 }

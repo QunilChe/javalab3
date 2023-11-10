@@ -1,5 +1,5 @@
 Order Receipt
-Date: 2023-11-09
+Date: 2023-11-10
 Items:
 - Chicken | Price: 5.0
 - Packet | Price: 3.0

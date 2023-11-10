@@ -4,16 +4,13 @@ public class Customer {
     private String firstName;
     private String lastName;
     private int age;
-    // Інші особисті дані покупця
 
     public Customer(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        // Ініціалізація інших особистих даних
     }
 
-    // Геттери та сеттери для особистих даних покупця
 
     public String getFirstName() {
         return firstName;

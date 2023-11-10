@@ -1,4 +1,5 @@
 package goods;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FileService {
-    // Метод для генерації чеку замовлення у .txt форматі
     public void generateOrderReceipt(String fileName, Receipt receipt) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write("Order Receipt\n");
@@ -18,6 +18,7 @@ public class FileService {
 
             List<Product> meatAndFishProducts = new ArrayList<>();
             List<Product> FruitsAndVegetables = new ArrayList<>();
+
             for (Product product : receipt.getPurchasedProducts()) {
                 writer.write("- " + product.getName() + " | Price: " + product.getPrice() + "\n");
 
@@ -50,7 +51,8 @@ public class FileService {
             e.printStackTrace();
         }
     }
-    // Метод для завантаження даних про кількість товарів та ціни з файлу на початку роботи програми
+
+
     public List<String> loadDataFromFile(String fileName) {
         List<String> lines = null;
         try {
@@ -62,7 +64,6 @@ public class FileService {
     }
 
 
-    // Метод для зчитування даних про товари з файлу
     public List<Product> loadDataFromFile1(String fileName) {
         try {
             return Files.lines(Paths.get(fileName))
@@ -72,7 +73,7 @@ public class FileService {
                             String name = parts[0].trim();
                             String category = parts[1].trim();
                             double price = Double.parseDouble(parts[2].trim());
-                            return new Product(name, price, category );
+                            return new Product(name, price, category);
                         }
                         return null;
                     })
@@ -83,7 +84,6 @@ public class FileService {
             return null;
         }
     }
-
 
 
     public List<Product> loadDataFromFile2(String fileName) {

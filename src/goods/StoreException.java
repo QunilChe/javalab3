@@ -16,5 +16,4 @@ public class StoreException extends RuntimeException {
             super(message);
         }
     }
-    // Add other exception classes here
 }
